@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  php-env:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-env
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    # networks:
+    #   - php-network
+  
+  mysql-db:
+    image: mysql:latest
+    container_name: mysql-db
+    restart: always
+    environment:
+      UPLOAD_LIMIT: 50000000
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      # MYSQL_DATABASE: php_db
+      # MYSQL_USER: php_user
+      # MYSQL_PASSWORD: php_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      UPLOAD_LIMIT: 50000000
+      PMA_HOST: mysql-db
+      PMA_PORT: 3306
+    ports:
+      - "8081:80"
