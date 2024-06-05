@@ -35,7 +35,7 @@ $ docker-compose up --build
 
 
 ##  Claim and Acknowledgement
-This version is adapted from the teamwork with Ying Guo，Crane Huang，and Jennifer Kuang.
+This version is adapted from the teamwork with Ying Guo, Crane Huang, and Jennifer Kuang.
 
 
 
