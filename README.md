@@ -34,5 +34,8 @@ $ docker-compose up --build
 ![screenshot](./screenshot.png)
 
 
+##  Claim and Acknowledgement
+This version is adapted from the teamwork with Ying Guo，Crane Huang，and Jennifer Kuang.
+
 
 
